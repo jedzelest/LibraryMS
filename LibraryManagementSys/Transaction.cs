@@ -64,5 +64,31 @@ namespace LibraryManagementSys
                 db.closeConnection();
             }
         }
+
+        public DateTime GetCheckoutDate(int transactionID)
+        {
+            DateTime checkoutDate = DateTime.MinValue;
+            db.openConnection();
+            string query = "SELECT \"checkoutDate\" FROM transaction_tbl WHERE \"transactionID\" = @transactionID";
+            using (NpgsqlCommand cmd = new NpgsqlCommand(query, db.Connection()))
+            {
+                cmd.Parameters.AddWithValue("@transactionID", transactionID);
+
+                try
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        checkoutDate = DateTime.Parse(result.ToString());
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("Error fetching checkout date: " + e.Message);
+                }
+            }
+            db.closeConnection();
+            return checkoutDate;
+        }
     }
 }
