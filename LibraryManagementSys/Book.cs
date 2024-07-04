@@ -12,7 +12,7 @@ namespace LibraryManagementSys
     class Book
     {
         private PostgresDBConnection db;
-
+        // all related to book
         public Book()
         {
             db = new PostgresDBConnection();

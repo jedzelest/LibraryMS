@@ -12,6 +12,7 @@ namespace LibraryManagementSys
     class Transaction
     {
         private PostgresDBConnection db;
+        // all related to transaction
         public Transaction()
         {
             db = new PostgresDBConnection();

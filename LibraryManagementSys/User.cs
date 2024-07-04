@@ -13,6 +13,7 @@ namespace LibraryManagementSys
     class User
     {
         private PostgresDBConnection db;
+        // all related to users
         public User()
         {
             db = new PostgresDBConnection();
