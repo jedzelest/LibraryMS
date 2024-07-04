@@ -12,6 +12,9 @@ namespace LibraryManagementSys
 {
     public partial class TransactionForm : Form
     {
+        private DateTime selectedReturnDate;
+        private DateTime checkoutDate;
+
         public TransactionForm()
         {
             InitializeComponent();
@@ -47,11 +50,11 @@ namespace LibraryManagementSys
             string title = bookComboBox.Text;
             int bookID = book.returnBookID(title);
 
-            DateTime checkoutDate = DateTime.Now;
+            checkoutDate = DateTime.Now;
 
             dateTimePicker1.Value = checkoutDate;
 
-            DateTime selectedReturnDate = rentDateTimePicker.Value;
+            selectedReturnDate = rentDateTimePicker.Value;
 
             int quantity = Convert.ToInt32(qtyTxt.Text);
 

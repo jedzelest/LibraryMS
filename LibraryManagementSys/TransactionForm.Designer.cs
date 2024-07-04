@@ -151,7 +151,7 @@ namespace LibraryManagementSys
             this.returnBtn.Name = "returnBtn";
             this.returnBtn.Size = new System.Drawing.Size(75, 23);
             this.returnBtn.TabIndex = 12;
-            this.returnBtn.Text = "Return";
+            this.returnBtn.Text = "Back";
             this.returnBtn.UseVisualStyleBackColor = true;
             this.returnBtn.Click += new System.EventHandler(this.returnBtn_Click);
             // 
